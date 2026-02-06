@@ -226,7 +226,9 @@
     </div>
 
     <script>
-        const apiKey = "AIzaSyDI74IZBKKe6P5GqSfqULmlcKE7leMQVKk";
+        // ⚠️ IMPORTANTE: GitHub bloquea la subida si detecta una API Key real.
+        // Reemplaza "TU_API_KEY_AQUI" con tu llave real una vez que hayas configurado las restricciones en Google Cloud.
+        const apiKey = "TU_API_KEY_AQUI";
         const aiInput = document.getElementById('ai-input');
         const aiBtn = document.getElementById('ai-btn');
         const aiResponse = document.getElementById('ai-response');
@@ -262,6 +264,11 @@
         }
 
         aiBtn.addEventListener('click', async () => {
+            if (apiKey === "TU_API_KEY_AQUI") {
+                alert("⚠️ Falta configurar la API Key. Edita el archivo index.html y coloca tu llave.");
+                return;
+            }
+
             const q = aiInput.value.trim();
             if (!q) return;
             aiResponse.classList.remove('hidden');
